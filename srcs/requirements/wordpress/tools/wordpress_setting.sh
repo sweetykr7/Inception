@@ -3,7 +3,7 @@
 rm -rf latest.tar.gz
 mkdir -p /var/www
 mv -f /wordpress/ /var/www
-cp -rf ./tmp/wp_config.php /var/www/wordpress/
+cp -rf ./tmp/wp-config.php /var/www/wordpress/
 chown -R www-data:www-data /var/www/wordpress/
 
 echo "env[MYSQL_DATABASE] = \$MYSQL_DATABASE" >> /etc/php/7.3/fpm/pool.d/www.conf
