@@ -1,12 +1,128 @@
-version : '3'
+version : "3"
 
 services:
+  nginx:
+    container_name: c_nginx
+    build: ./requirements/nginx/
+    image: nginx
+    restart: always
+    depends_on: 
+      - wordpress
+    ports:
+      - "443:443"
+    networks: 
+      - inception_network
+    volumes:
+      - wp_volume:/var/www/
+
   mariadb:
     container_name: c_mariadb
     build: ./requirements/mariadb/
     image: mariadb
     restart: always
     env_file: .env
+    networks: 
+      - inception_network
+    volumes:
+      - db_volume:/var/lib/mysql/
     
     # tty: true
 
+  wordpress:
+    container_name: c_wordpress
+    build: ./requirements/wordpress/
+    image: wordpress #:latest #wordpress
+    depends_on: 
+      - mariadb
+    restart: always
+    env_file: .env
+    networks: 
+      - inception_network
+    # ports:
+    #   - "8000:80"
+    # environment:
+    #   WORDPRESS_DB_HOST: db:3306
+    #   WORDPRESS_DB_USER: wordpress
+    #   WORDPRESS_DB_PASSWORD: wordpress
+    #   WORDPRESS_DB_NAME: wordpress
+    # tty: true
+    volumes:
+      - wp_volume:/var/www/
+
+  
+
+networks:
+  inception_network:
+
+volumes:
+  db_volume:
+    driver_opts:
+      type: volume
+      o : 'bind'
+      device: '/home/sooyokim/data/database'
+
+  wp_volume:
+    driver_opts:
+      type: volume
+      o : 'bind'
+      device: '/home/sooyokim/data/wordpress'
+
+
+# version : '3'
+
+# services:
+#   nginx:
+#     container_name: c_nginx
+#     build: ./requirements/nginx/
+#     image: nginx
+#     depends_on :
+#       - wordpress
+#     restart: always
+#     ports:
+#       - "443:443"
+#     networks:
+#       - inception_network
+#     volumes:
+#       - wp_volume:/var/www/
+
+#   wordpress:
+#     container_name: c_wordpress
+#     build: ./requirements/wordpress/
+#     image: wordpress
+#     depends_on :
+#       - mariadb
+#     restart: always
+#     networks:
+#       - inception_network
+#     env_file:
+#       - .env
+#     volumes:
+#       - wp_volume:/var/www/
+
+#   mariadb:
+#     container_name: c_mariadb
+#     build: ./requirements/mariadb/
+#     image: mariadb
+#     restart: always
+#     networks:
+#       - inception_network
+#     env_file:
+#       - .env
+#     volumes:
+#       - db_volume:/var/lib/mysql/
+
+# networks:
+#   inception_network:
+
+# volumes:
+#     db_volume:
+#       driver_opts:
+#         type: volume
+#         o : 'bind'
+#         device: '/home/dohykim/data/database'
+
+#     wp_volume:
+#       driver_opts:
+#         type: volume
+#         o : 'bind'
+#         device: '/home/dohykim/data/wordpress'
