@@ -10,7 +10,7 @@ RUN wget https://wordpress.org/latest.tar.gz
 RUN tar xzvf latest.tar.gz
 
 COPY ./tools/wordpress_setting.sh /tmp/
-COPY ./conf/wp_config.php /tmp/
+COPY ./conf/wp-config.php /tmp/
 
 CMD sh /tmp/wordpress_setting.sh
 

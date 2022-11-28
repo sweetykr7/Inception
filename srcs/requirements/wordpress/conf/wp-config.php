@@ -26,14 +26,14 @@ $table_prefix = 'wp_';
 
 /* Authentication Unique Keys and Salts. */
 /* https://api.wordpress.org/secret-key/1.1/salt/ */
-define('AUTH_KEY',         '.`:gFQ~D&%+(Wu%k6F_ilk)ReM9VaRVU|w8w 7kV&!jsl9?gh;hxq+=`-LBKXMqy');
-define('SECURE_AUTH_KEY',  'CkH`T:V.L[.u`F>ptDJn*Qkrr0.5<rERg6yisT{zl;3#+yV`vM,MwG!g9o?+fI;c');
-define('LOGGED_IN_KEY',    '4H~hc1I^9<|*0!LPV(!e#ngIH`+%TXEcjO)ZnVw:(TL;7b}E[z^C2;guP}C{l)-C');
-define('NONCE_KEY',        '=kQRVNgLlJ.P}b$[+_SB1I%u3m<*jmchw_12pFn6WlrXsOZXxD{#9MH>XTD,+9~G');
-define('AUTH_SALT',        '+@W1H0JG@wa1X:g0k22!o~BgNIx{qkyf8f9T-dM(-<X+GG5Gh`]+b!aH@(^]klpE');
-define('SECURE_AUTH_SALT', 'mKM><6t%rWqj.2%)PF{|Y}aFk/OhS-_^ELXt+)rCQHCDC<%@ye*s1={he[H(!SsY');
-define('LOGGED_IN_SALT',   '+^F7m1Ip)[t?Y)8dX6+QGn~7#y*|5_|1@^}p0xRK;h-</({[JHRlFb[LP<mXZlkI');
-define('NONCE_SALT',       'Xr-1?]G%1am|->0}{7e]zpzKyERRjwC;|LSButw3}~4$jdRSDYxsWD qW5<~Y-$T');
+define('AUTH_KEY',         'Q($o2Bx?cH?S-wd-M?AT.7PA<7I.K#9d%FfJ8[`i|@~[TcY]$G$*1IOO1te5Mrpj');
+define('SECURE_AUTH_KEY',  '/bFWM7+e?[aB}DW{7yc^6{2S+JjdV-BpV{7V(6IP-[[BK:nMu*gK>-c&a=:hY+/d');
+define('LOGGED_IN_KEY',    'bUz>|5Q[[D}~ZX`>pGNyN=nD-wPJ#3F[96:xmH^bx;fyO5`S;6=:6JdI&spl-ObO');
+define('NONCE_KEY',        'Xxf1E}|J<$~(2_=8jib+aBl*^vS1;Ul8&2TfCtF~d7/T/Z-=e7f<qd]n2r%!n08$');
+define('AUTH_SALT',        'a9B,g+:p&OYu2by&WOp(~9ewI-_)@+I_HyU*t=[]TeWPRcmNIU93l=>wu-4|P.y{');
+define('SECURE_AUTH_SALT', 'l:(q#dM_[9oQl(l^g&.*)-mJio(($pR-wkw&O&993N>aiw=?*tJ{=U_{S&W(HO0^');
+define('LOGGED_IN_SALT',   'Rs|b=PN`3|E[!]N4<s4?BD:2&{@5RzNuQsO[SMrEt0mF12j4V6<1h51Uw!4W?@J4');
+define('NONCE_SALT',       'Gp9E$ sE?Ldr0oJZCA*gIDWOI%LREJIx+(uM%fY0M_uZtcwt3(|zTJW|WvT@_-7M');
 
 
 /* Absolute path to the WordPress directory. */
