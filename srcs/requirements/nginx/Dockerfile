@@ -4,7 +4,8 @@ RUN 		apt-get update -y
 RUN			apt-get install -y nginx
 RUN			apt-get install -y openssl
 
-# COPY		./tools/setup_nginx.sh /tmp/
+
+COPY		./tools/setup_nginx.sh /tmp/
 COPY		./conf/default /etc/nginx/sites-available/default
 
 RUN			openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -14,4 +15,8 @@ RUN			openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 EXPOSE		443
 
-CMD			["nginx", "-g", "daemon off;"]
+ENTRYPOINT [ "sh", "/tmp/setup_nginx.sh" ]
+# exec nginx -g 'daemon off;'
+
+# 아래는 위의 코드와 같다. 
+# CMD			["nginx", "-g", "daemon off;"]
