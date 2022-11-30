@@ -4,6 +4,7 @@ up :
 	sudo mkdir -p ${HOME}/data/wordpress ${HOME}/data/database
 	sudo cp -rp ./srcs/requirements/nginx/conf/hosts /etc/hosts
 	sudo chmod 777 /etc/hosts
+	
 	sudo docker-compose -f srcs/docker-compose.yml up --build
 
 down : 

@@ -13,8 +13,7 @@ RUN tar xzvf latest.tar.gz
 COPY ./tools/wordpress_setting.sh /tmp/
 COPY ./conf/wp-config.php /tmp/
 
-CMD sh /tmp/wordpress_setting.sh
+# CMD sh /tmp/wordpress_setting.sh
 ENTRYPOINT ["sh", "./tmp/wordpress_setting.sh"]
-# ENTRYPOINT ["sh", "./mariadb_setting.sh"]
 
 EXPOSE 9000

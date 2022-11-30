@@ -1,11 +1,13 @@
 #!bin/bash
 
-# chown -R www-data:www-data /var/www/wordpress/
-
 if [ ! -d "/var/build_complete/" ];then
 rm -rf latest.tar.gz
 mkdir -p /var/www
+
+if [ ! -d "/var/www/wordpress/" ];then
 mv -f /wordpress/ /var/www
+fi
+
 cp -rf ./tmp/wp-config.php /var/www/wordpress/
 chown -R www-data:www-data /var/www/wordpress/
 
@@ -18,7 +20,7 @@ mkdir -p /run/php/
 mkdir -p /var/build_complete/
 fi
 
-sleep 1
+sleep 3
 echo "wordpress begin!"
 
 exec php-fpm7.3 -F

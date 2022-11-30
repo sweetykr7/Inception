@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 2
+sleep 4
 
 echo "Nginx begin!";
 
