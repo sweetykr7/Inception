@@ -25,31 +25,19 @@ services:
       - inception_network
     volumes:
       - db_volume:/var/lib/mysql/
-    
-    # tty: true
 
   wordpress:
     container_name: c_wordpress
     build: ./requirements/wordpress/
-    image: wordpress #:latest #wordpress #wordpress:latest
+    image: wordpress
     depends_on: 
       - mariadb
     restart: always
     env_file: .env
     networks: 
       - inception_network
-    # ports:
-    #   - "8000:80"
-    # environment:
-    #   WORDPRESS_DB_HOST: db:3306
-    #   WORDPRESS_DB_USER: sooyokim
-    #   WORDPRESS_DB_PASSWORD: 1234
-    #   WORDPRESS_DB_NAME: wp_db
-    # tty: true
     volumes:
-      - wp_volume:/var/www/
-
-  
+      - wp_volume:/var/www/  
 
 networks:
   inception_network:
